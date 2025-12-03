@@ -1,32 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <link rel="stylesheet" href="style.css">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title">Lista de Tarefas</title>   
-    </head>
-        <body>
-             <header>
 
-    
-    <hi>minha lista de tarefas</hi>
-            <ul>
-                <li>
-                    <p>estudar sobre html </p>
-                    <p>estudar JavaScript</p>
-                    <p>estudar css</p>
-                    <p>regar as plantas</p>
-                </li>
-            </ul>
-            
-            <div>
-                <button id = "botao"> 
-                    Adicionar Tarefa
-                </button>
-    </body>
-   
-            
-      </header>          
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <title>Tarefa</title>
+</head>
+
+<body id="corpo">
+    <header id="cabecalho">
+        <h2>
+            Add Task
+        </h2>
+    </header>
+    <main>
+        <form>
+            <label for="task">
+                New Task
+            </label>
+            <input type="text" id="task" name="task" placeholder="Digite sua tarefa aqui">
+            <button type="submit">Adicionar Tarefa</button>
+        </form>
+        <br>
+        <div id="filtro">
+            <button id="Pendentes">Pendentes</button>
+            <button id="Concluidas">Concluidas</button>
+            <button id="Todas">Todas</button>
+        </div>
+        <h4>
+            Task List:
+        </h4>
+        <ul id="task-list">
+            <li class="all-itens-pending" data-id="1">
+                <imput type="checkbox" onchange="toggleComplete(1)">
+                    <span>text of the tasks</span>
+                    <button class="edit-btn" onclick="editTask(1)"edit</button>
+                    <button class="delete-btn" onclick="deleteTask(1)">Delete</button>    
+            </li>
+        </ul>
+    </main>
+    <footer>
+        <p id="task-counter"><span id="count">0</span> Tarefas Pendentes</p>
+        <p>&copy; 2025</p>
+    </footer>
+</body>
+<script src="script.js"></script>   
 </html>
